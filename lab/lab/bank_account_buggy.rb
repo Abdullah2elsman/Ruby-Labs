@@ -21,7 +21,7 @@ class BankAccount
 
   def deposit(amount)
     if amount > 0
-      @balance -= amount
+      @balance += amount # Logic Error
       puts "  New balance: $#{"%.2f" % @balance}"
     else
       puts "  Error: Deposit amount must be positive."
@@ -29,17 +29,23 @@ class BankAccount
   end
 
   def withdraw(amount)
+    # Logic Error
+  end
+    if amount > @balance
+      puts "  Error: Insufficient funds."
+    else
     @balance -= amount
-    puts "  New balance: $#{"%.2f" % @balance}"
-
+        puts "  New balance: $#{"%.2f" % @balance}"
+      end
+    end # Syntax Error
   def apply_interest
-    @balance = @balance * @rate
+    @balance = @balance * (1 + @rate) # Logic Error
     puts "  New balance: $#{"%.2f" % @balance}"
   end
 
   def display_info
     puts "Owner  : #{@owner}"
-    puts "Balance: $#(@balance}"
+    puts "Balance: $#{@balance}" # Synta  x Error
   end
 end
 
