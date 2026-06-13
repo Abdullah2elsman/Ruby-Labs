@@ -30,12 +30,11 @@ class BankAccount
 
   def withdraw(amount)
     # Logic Error
-  end
     if amount > @balance
       puts "  Error: Insufficient funds."
     else
-    @balance -= amount
-        puts "  New balance: $#{"%.2f" % @balance}"
+      @balance -= amount
+      puts "  New balance: $#{"%.2f" % @balance}"
       end
     end # Syntax Error
   def apply_interest
